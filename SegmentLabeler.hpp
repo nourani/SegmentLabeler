@@ -34,7 +34,7 @@ using namespace cv;
  * The returned image has the type UINT16. This puts a limitation of 65536
  * 	different segment numbers.
  */
-Mat labelSegments( Mat );
+cv::Mat labelSegments( cv::Mat );
 
 
 #endif /* SEGMENTLABELER_HPP_ */
