@@ -14,6 +14,12 @@ int main( int argc, char ** argv ) {
 
 	Mat lblImg = labelSegments( segImg );
 
+	double maxVal;
+	minMaxLoc(lblImg, NULL, &maxVal );
+	namedWindow("seg");
+	imshow("seg", lblImg/maxVal);
+	waitKey(10000);
+
 	string outFile = argv[1];
 	if( argc > 2 ) {
 		outFile = argv[2];
