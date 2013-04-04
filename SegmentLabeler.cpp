@@ -18,10 +18,14 @@ Mat labelSegments( Mat segImg ) {
 
 	while( minVal == 0 ) {
 		nextSegLbl++;
-		cout << "seg lbl = " << nextSegLbl << endl;
+//		cout << "seg lbl = " << nextSegLbl << endl;
 		floodFill( lblImg, minLoc, Scalar( nextSegLbl ) );
 
 		minMaxLoc( lblImg, &minVal, &maxVal, &minLoc );
+
+//		namedWindow("seg");
+//		imshow("seg", lblImg/maxVal);
+//		waitKey(100);
 	}
 
 	return lblImg;
