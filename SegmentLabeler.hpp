@@ -31,8 +31,8 @@ using namespace cv;
 /**
  * Given a segmented image, this procedure find each segment and assigns a
  * 	label number to it.
- * The returned image has the type UINT16. This puts a limitation of 65536
- * 	different segment numbers.
+ * The returned image has the type Float32. Segments are labeled 1, 2, ...
+ * 	and the boundary pixels have the value 0.
  */
 cv::Mat labelSegments( cv::Mat );
 
