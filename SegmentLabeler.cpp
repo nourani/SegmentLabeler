@@ -8,8 +8,13 @@ Mat labelSegments( Mat segImg ) {
 	Mat lblImg;
 	segImg.convertTo( lblImg, CV_32F );
 
-	// Scale to 0-MAX
 	minMaxLoc( lblImg, &minVal, &maxVal );
+	// No segments
+	if( maxVal == 0 ) {
+		return lblImg;
+	}
+
+	// Scale to 0-MAX
 	lblImg *= pow(2.,32) / maxVal;
 
 	// Label each segment
