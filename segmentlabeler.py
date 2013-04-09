@@ -8,8 +8,9 @@ def labelSegments( segImg ):
 	
 	
 	mml = cv.MinMaxLoc( lblImg )
-	# No segments available!
+	# No segments available! All pixels are set to the same type
 	if mml[1] == 0:
+		cv.Set(lblImg, 1)
 		return lblImg
 	
 	# Scale to 0-MAX
