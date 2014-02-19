@@ -1,6 +1,15 @@
 import cv
 
 def labelSegments( segImg ):
+	'''
+		A method to assign a numeric label to each segment (super pixel) of an image.
+		
+		Parameters:
+			segImg	- OpenCV segmented image (Canny edges, Contours etc)
+		Returns:
+			lblImg	- OpenCV image with each label assigned a numberical value.
+						The Edge pixels will have label 0 (zero)
+	'''
 	#cv.NamedWindow("seg")
 	
 	lblImg = cv.CreateMat( segImg.rows, segImg.cols, cv.CV_32F )
